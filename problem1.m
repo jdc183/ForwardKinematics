@@ -7,7 +7,7 @@ d = [.540;0;0;-1.812;0;-0.1];
 alpha = [3*pi/2;-pi;-pi/2;pi/2;3*pi/2;pi];
 theta = q + [0;-pi/2;0;0;0;0];
 
-% Create a kinchain object for the robot
+% Create a kinematic chain object for the robot
 motoman = kinchain(q,a,d,alpha,theta);
 
 % Specify joint angles
@@ -22,7 +22,7 @@ q2(5) = -q1(5);
 q2(6) = q1(6)-pi;
 
 % Compute the pose for the alternate joint angles
-A2 = motoman.computePose(q2);
+A2 = motoman.computePose(q2)
 
 % Plot the alternate pose
 motoman.visualizePose(q2);
